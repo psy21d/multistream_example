@@ -36,4 +36,7 @@ rtmp {
 
 https://thehomeofthefuture.com/installation-guide/nginx-on-macos/
 
-Local Server to stream rtmp://localhost/live.
+Local Server to stream rtmp://localhost/live
+
+brew services restart nginx to update config
+
