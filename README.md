@@ -1,11 +1,9 @@
 # multistream_example
 Stream to many sources from nginx
 
-_______________________________________________________________
 nginx.conf
-_______________________________________________________________
 
-
+```
 #user  nobody;
 worker_processes  1;
  
@@ -34,3 +32,4 @@ rtmp {
                 }
         }
 }
+```
