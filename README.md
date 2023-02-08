@@ -1,4 +1,4 @@
-# multistream_example
+# Nginx multistream example
 Stream to many sources from nginx
 
 nginx.conf
@@ -34,7 +34,33 @@ rtmp {
 }
 ```
 
-https://thehomeofthefuture.com/installation-guide/nginx-on-macos/
+```
+==> nginx-full
+Docroot is: /usr/local/var/www
+
+The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /usr/local/etc/nginx/servers/.
+
+- Tips -
+Run port 80:
+ $ sudo chown root:wheel /usr/local/opt/nginx-full/bin/nginx
+ $ sudo chmod u+s /usr/local/opt/nginx-full/bin/nginx
+Reload config:
+ $ nginx -s reload
+Reopen Logfile:
+ $ nginx -s reopen
+Stop process:
+ $ nginx -s stop
+Waiting on exit process
+ $ nginx -s quit
+
+To start denji/nginx/nginx-full now and restart at login:
+  brew services start denji/nginx/nginx-full
+Or, if you don't want/need a background service you can just run:
+  nginx
+```
 
 Local Server to stream rtmp://localhost/live
 
