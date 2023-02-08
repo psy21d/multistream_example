@@ -74,7 +74,10 @@ Or, if you don't want/need a background service you can just run:
   nginx
 ```
 
+```
 brew services list
+```
+
 to check status
 
 Local Server to stream rtmp://localhost/live
