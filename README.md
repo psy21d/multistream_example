@@ -79,3 +79,5 @@ Local Server to stream rtmp://localhost/live
 
 brew services restart nginx to update config
 
+For rtmps:
+https://dev.to/lax/rtmps-relay-with-stunnel-12d3
