@@ -38,7 +38,9 @@ rtmp {
                         live on;
                         record off;
                         push rtmp://live-ams.twitch.tv/app/STREAMKEY;
-                        push rtmp://a.rtmp.youtube.com/live2/STREAMKEY;
+                        push rtmp://a.rtmp.youtube.com/live2/STREAMKEY2;
+                        # push rtmps://127.0.0.1:19350/app/STREAMKEY;
+                        # push rtmps://127.0.0.1:19351/live2/STREAMKEY2;
                 }
         }
 }
@@ -81,5 +83,50 @@ brew services restart nginx to update config
 
 For rtmps:
 https://dev.to/lax/rtmps-relay-with-stunnel-12d3
+
+# Install stunnel
+brew install stunnel
+
+nano /etc/stunnel/stunnel.conf
+```
+# Stunnel basic config
+setuid = stunnel
+setgid = stunnel
+pid=/tmp/stunnel.pid
+output = /var/log/stunnel/stunnel.log
+include = /etc/stunnel/conf.d
+```
+
+nano /etc/stunnel/conf.d/redirect.conf
+```
+[live-ams.twitch.tv]
+client = yes
+accept = 127.0.0.1:19350
+connect = live-ams.twitch.tv:1935;
+verifyChain = no
+
+[a.rtmp.youtube.com]
+client = yes
+accept = 127.0.0.1:19351
+connect = a.rtmp.youtube.com:1935;
+verifyChain = no
+```
+
+A bogus SSL server certificate has been installed to:
+  /usr/local/etc/stunnel/stunnel.pem
+
+This certificate will be used by default unless a config file says otherwise!
+Stunnel will refuse to load the sample configuration file if left unedited.
+
+In your stunnel configuration, specify a SSL certificate with
+the "cert =" option for each service.
+
+To use Stunnel with Homebrew services, make sure to set "foreground = yes" in
+your Stunnel configuration.
+
+To restart stunnel after an upgrade:
+  brew services restart stunnel
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/stunnel/bin/stunnel
 
 https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
