@@ -1,6 +1,9 @@
 # Nginx multistream example
 Stream to many sources from nginx
 
+brew tap denji/nginx
+
+
 nginx.conf
 
 ```
@@ -61,6 +64,9 @@ To start denji/nginx/nginx-full now and restart at login:
 Or, if you don't want/need a background service you can just run:
   nginx
 ```
+
+brew services list
+to check status
 
 Local Server to stream rtmp://localhost/live
 
