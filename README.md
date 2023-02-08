@@ -81,3 +81,5 @@ brew services restart nginx to update config
 
 For rtmps:
 https://dev.to/lax/rtmps-relay-with-stunnel-12d3
+
+https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
