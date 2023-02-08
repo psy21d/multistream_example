@@ -2,7 +2,14 @@
 Stream to many sources from nginx
 
 brew tap denji/nginx
+brew install nginx-full --with-upload-module
 
+Conflicts
+If you have trouble installing this tap then please make sure the default version of nginx is removed first. 
+You can do that with the following commands.
+
+brew unlink nginx
+brew link nginx-full
 
 nginx.conf
 
