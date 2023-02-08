@@ -90,15 +90,6 @@ brew install stunnel
 nano /etc/stunnel/stunnel.conf
 ```
 # Stunnel basic config
-setuid = stunnel
-setgid = stunnel
-pid=/tmp/stunnel.pid
-output = /var/log/stunnel/stunnel.log
-include = /etc/stunnel/conf.d
-```
-
-nano /etc/stunnel/conf.d/redirect.conf
-```
 [live-ams.twitch.tv]
 client = yes
 accept = 127.0.0.1:19350
@@ -110,6 +101,7 @@ client = yes
 accept = 127.0.0.1:19351
 connect = a.rtmp.youtube.com:1935;
 verifyChain = no
+
 ```
 
 A bogus SSL server certificate has been installed to:
@@ -128,5 +120,12 @@ To restart stunnel after an upgrade:
   brew services restart stunnel
 Or, if you don't want/need a background service you can just run:
   /usr/local/opt/stunnel/bin/stunnel
+  
+  cd /usr/local/etc/stunnel/
+  cp stunnel.conf-sample stunnel.conf
+  
+Logs: /usr/local/var/log/stunnel.log
+  
+  
 
 https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
