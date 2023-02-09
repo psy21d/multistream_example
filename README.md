@@ -141,3 +141,10 @@ Logs:
   
 
 https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
+
+Because is it NOT WORK with telegram:
+```
+open -n -a OBS.app
+```
+
+https://github.com/sallar/mac-local-rtmp-server/releases
