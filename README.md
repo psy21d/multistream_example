@@ -154,3 +154,5 @@ for best experience with OBS:
 ```
 renice -n # PID
 ```
+
+https://obsproject.com/forum/resources/multiple-rtmp-outputs-plugin.964/
