@@ -138,7 +138,8 @@ Logs:
 ```
 /usr/local/var/log/stunnel.log
 ```  
-  
+
+NEED TO TUNE PACKET SIZE
 
 https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
 
