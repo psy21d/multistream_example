@@ -148,3 +148,8 @@ open -n -a OBS.app
 ```
 
 https://github.com/sallar/mac-local-rtmp-server/releases
+
+for best experience with OBS:
+```
+renice -n # PID
+```
