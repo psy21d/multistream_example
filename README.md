@@ -82,7 +82,10 @@ to check status
 
 Local Server to stream rtmp://localhost/live
 
-brew services restart nginx to update config
+```
+brew services restart nginx 
+```
+to update config
 
 For rtmps:
 https://dev.to/lax/rtmps-relay-with-stunnel-12d3
@@ -119,16 +122,22 @@ the "cert =" option for each service.
 To use Stunnel with Homebrew services, make sure to set "foreground = yes" in
 your Stunnel configuration.
 
+```
 To restart stunnel after an upgrade:
   brew services restart stunnel
 Or, if you don't want/need a background service you can just run:
   /usr/local/opt/stunnel/bin/stunnel
-  
-  cd /usr/local/etc/stunnel/
-  cp stunnel.conf-sample stunnel.conf
-  
-Logs: /usr/local/var/log/stunnel.log
-  
+```
+
+```
+cd /usr/local/etc/stunnel/
+cp stunnel.conf-sample stunnel.conf
+```
+
+Logs: 
+```
+/usr/local/var/log/stunnel.log
+```  
   
 
 https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#master-and-worker-processes
